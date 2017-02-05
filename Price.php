@@ -5,22 +5,27 @@ class Price
 	protected $__newPrice;
 
 	//Setter
-	public function setPrice($price){
+	public function setPrice($price)
+	{
 		$this->__price = $price;
 	}
-	public function setNewPrice($newPrice){
+	public function setNewPrice($newPrice)
+	{
 		$this->__newPrice = $newPrice;
 	}
 
 	//Getter
-	public function getPrice(){
+	public function getPrice()
+	{
 		return $this->__price;
 	}
-	public function getNewPrice(){
+	public function getNewPrice()
+	{
 		return $this->__newPrice;
 	}
 
-	public function getAmountDiscount($price, $newPrice){
+	public function getAmountDiscount($price, $newPrice)
+	{
 		return ((($price - $newPrice)/$price)*100).'%';
 	}
 }

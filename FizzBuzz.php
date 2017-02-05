@@ -8,7 +8,8 @@ class FizzBuzz
      * [setArray setter]
      * @param [array] $array
      */
-	public function setArray($array){
+	public function setArray($array)
+	{
 		$this->__array = $array;
 	}
 	
@@ -16,7 +17,8 @@ class FizzBuzz
 	 * [setCounter setter]
 	 * @param [int] $counter
 	 */
-	public function setCounter($counter){
+	public function setCounter($counter)
+	{
     	$this->__counter = $counter;
     }
 
@@ -24,7 +26,8 @@ class FizzBuzz
      * [getArray getter]
      * @return [array]
      */
-    public function getArray(){
+    public function getArray()
+    {
     	return $this->__array;
     }
 
@@ -32,7 +35,8 @@ class FizzBuzz
 	 * [getCounter getter]
 	 * @return [int] 
 	 */
-    public function getCounter(){
+    public function getCounter()
+    {
     	return $this->__counter;
     }    
 
@@ -42,7 +46,8 @@ class FizzBuzz
      * @param  [array] $counter [counter for i itteration]
      * @return [void]           
      */
-	public function browseCollection($array, $counter){
+	public function browseCollection($array, $counter)
+	{
 		try {
 			for ($i=1; $i<= $counter; $i++){
 				$chaine = '';
