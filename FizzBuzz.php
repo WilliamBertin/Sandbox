@@ -22,14 +22,19 @@ class FizzBuzz
     }    
 
 	public function browseCollection($array, $compteur){
-		for ($i=1; $i<= $compteur; $i++){
-			$chaine = '';
-			foreach ($array as $key=>$value){
-				if (($i % $key) === 0){
-					$chaine .= $value.' ';
+		try {
+			for ($i=1; $i<= $compteur; $i++){
+				$chaine = '';
+				foreach ($array as $key=>$value){
+					if (($i % $key) === 0){
+						$chaine .= $value.' ';
+					}
 				}
+				echo $chaine === '' ? $i."<br />" : $chaine."<br />"; 
 			}
-			echo $chaine === '' ? $i."<br />" : $chaine."<br />"; 
+		} 
+		catch (Exception $e) {
+    		echo 'Exception reçue : ',  $e->getMessage(), "\n";
 		}
 	}
 }
