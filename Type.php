@@ -4,8 +4,8 @@ class Type {
 	protected $__type;
 
     /**
-     * [setVariable setter]
-     * @param [?] $variable
+     * [setVariable]
+     * @param [no specific type] $variable
      */
 	public function setVariable($variable)
 	{
@@ -13,7 +13,7 @@ class Type {
 	}
 	
 	/**
-	 * [setType setter]
+	 * [setType]
 	 * @param [text] $type
 	 */
 	public function setType($type)
@@ -22,8 +22,8 @@ class Type {
     }
 
     /**
-     * [getVariable getter]
-     * @return [?] [variable to type test]
+     * [getVariable]
+     * @return [no specific type] 
      */
     public function getVariable()
     {
@@ -31,8 +31,8 @@ class Type {
     }
 
 	/**
-	* [getType getter]
-	* @return [text] [type of the value expected]
+	* [getType]
+	* @return [text]
 	*/
     public function getType()
     {
@@ -41,8 +41,8 @@ class Type {
 
 	/**
 	 * [testType throw exception if variable isn't of desired type]
-	 * @param  [?] $variable    [variable to test]
-	 * @param  [text] $type     [type expected for variable]
+	 * @param  [no specific type] $variable        [variable to test]
+	 * @param  [text]             $type            [type expected for variable]
 	 * @return [void]           
 	 */
 	public function testType ($variable, $type)

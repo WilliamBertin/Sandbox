@@ -5,7 +5,7 @@ class FizzBuzz
     protected $__counter;
 
     /**
-     * [setArray setter]
+     * [setArray]
      * @param [array] $array
      */
 	public function setArray($array)
@@ -14,7 +14,7 @@ class FizzBuzz
 	}
 	
 	/**
-	 * [setCounter setter]
+	 * [setCounter]
 	 * @param [int] $counter
 	 */
 	public function setCounter($counter)
@@ -23,7 +23,7 @@ class FizzBuzz
     }
 
     /**
-     * [getArray getter]
+     * [getArray]
      * @return [array]
      */
     public function getArray()
@@ -32,7 +32,7 @@ class FizzBuzz
     }
 
 	/**
-	 * [getCounter getter]
+	 * [getCounter]
 	 * @return [int] 
 	 */
     public function getCounter()
