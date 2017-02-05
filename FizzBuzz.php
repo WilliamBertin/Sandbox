@@ -2,28 +2,49 @@
 class FizzBuzz
 {
 	protected $__array;
-    protected $__compteur;
+    protected $__counter;
 
-    //Setter
+    /**
+     * [setArray setter]
+     * @param [array] $array
+     */
 	public function setArray($array){
 		$this->__array = $array;
-	}   
-	public function setCompteur($compteur){
-    	$this->__compteur = $compteur;
+	}
+	
+	/**
+	 * [setCounter setter]
+	 * @param [int] $counter
+	 */
+	public function setCounter($counter){
+    	$this->__counter = $counter;
     }
 
-    //Getter    
+    /**
+     * [getArray getter]
+     * @return [array]
+     */
     public function getArray(){
     	return $this->__array;
     }
 
-    public function getCompteur(){
-    	return $this->__compteur;
+	/**
+	 * [getCounter getter]
+	 * @return [int] 
+	 */
+    public function getCounter(){
+    	return $this->__counter;
     }    
 
-	public function browseCollection($array, $compteur){
+    /**
+     * [browseCollection display value if key is multiple of counter]
+     * @param  [array] $array   [collection of integer as index and text as value]
+     * @param  [array] $counter [counter for i itteration]
+     * @return [void]           
+     */
+	public function browseCollection($array, $counter){
 		try {
-			for ($i=1; $i<= $compteur; $i++){
+			for ($i=1; $i<= $counter; $i++){
 				$chaine = '';
 				foreach ($array as $key=>$value){
 					if (($i % $key) === 0){
@@ -46,5 +67,5 @@ $array = array (
 
 $fizzBuzz = new FizzBuzz();
 $fizzBuzz->setArray($array);
-$fizzBuzz->setCompteur(100);
-$fizzBuzz->browseCollection($fizzBuzz->getArray(), $fizzBuzz->getCompteur());
+$fizzBuzz->setCounter(100);
+$fizzBuzz->browseCollection($fizzBuzz->getArray(), $fizzBuzz->getCounter());
