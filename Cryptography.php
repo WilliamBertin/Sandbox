@@ -3,6 +3,7 @@ class Cryptography
 {
 	protected $__message;
 	protected $__notch;
+	protected $__decrypt;
 
 	/**
 	 * [setMessage]
@@ -11,8 +12,6 @@ class Cryptography
     public function setMessage($_message)
     {
         $this->__message = $_message;
-
-        return $this;
     }
 
 	/**
@@ -22,8 +21,15 @@ class Cryptography
     public function setNotch($_notch)
     {
         $this->__notch = $_notch;
+    }
 
-        return $this;
+	/**
+	 * [setDecrypt]
+	 * @param [bool] $_decrypt
+	 */
+    public function setDecrypt($_decrypt)
+    {
+    	$this->__decrypt = $_decrypt;
     }
 
 	/**
@@ -43,26 +49,45 @@ class Cryptography
     {
         return $this->__notch;
     }
-//TO DO : ADD BOOLEAN TO DECRYPT
-	public function CaesarCryptography($message, $notch) {
+
+    /**
+     * [getDecrypt]
+     * @return [bool]
+     */
+    public function getDecrypt()
+    {
+    	return $this->__decrypt;
+    }
+
+    /**
+     * [CaesarCryptography Crypt a message with Caesar cryptohgraphy method]
+     * @param [string]  $message [message to crypt]
+     * @param [int]  $notch   [rank to crypt the message (Caesar method)]
+     * @param [boolean] $decrypt [boolean, default value is false, true to decrypt, false to crypt]
+     */
+	public function CaesarCryptography($message, $notch, $decrypt = false) {
 		try {
 			$end = strlen($message);
 			for($i = 0; $i <= $end; ++$i) 
 			{
 				$char = substr( $message, $i, 1 );
 					for ($j = 0; $j < $notch; ++$j){
-						$char = ++$char;
+						$decrypt === true ? $chat = --$char : $char = ++$char;
 					}
 				$message[$i] = $char;
 			}
+	    print_r($message);
 		} catch (Exception $e) {
 			echo 'Exception reçue : ',  $e->getMessage(), "\n";
 	    }
-	    print_r($message);
 	}
 }
 
 $messageToCrypt = new Cryptography();
 $messageToCrypt->setMessage('ABC');
 $messageToCrypt->setNotch(2);
+echo "MESSAGE CRYPTÉ : ";
 $messageToCrypt->CaesarCryptography($messageToCrypt->getMessage(), $messageToCrypt->getNotch());
+$messageToCrypt->setDecrypt(true);
+echo "<br /> MESSAGE DÉCRYPTÉ : ";
+$messageToCrypt->CaesarCryptography($messageToCrypt->getMessage(), $messageToCrypt->getNotch(), $messageToCrypt->getDecrypt());
