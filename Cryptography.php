@@ -43,15 +43,19 @@ class Cryptography
     {
         return $this->__notch;
     }
-
+//TO DO : ADD BOOLEAN TO DECRYPT
 	public function CaesarCryptography($message, $notch) {
 		try {
-			foreach($message as $letter){
-				$letter++;
-				echo $letter;
+			$end = strlen($message);
+			for($i = 0; $i <= $end; ++$i) 
+			{
+				$char = substr( $message, $i, 1 );
+					for ($j = 0; $j < $notch; ++$j){
+						$char = ++$char;
+					}
+				$message[$i] = $char;
 			}
-		}
-		catch (Exception $e) {
+		} catch (Exception $e) {
 			echo 'Exception reçue : ',  $e->getMessage(), "\n";
 	    }
 	    print_r($message);
@@ -59,6 +63,6 @@ class Cryptography
 }
 
 $messageToCrypt = new Cryptography();
-$messageToCrypt->setMessage('Hello Word');
-$messageToCrypt->setNotch(1);
+$messageToCrypt->setMessage('ABC');
+$messageToCrypt->setNotch(2);
 $messageToCrypt->CaesarCryptography($messageToCrypt->getMessage(), $messageToCrypt->getNotch());
