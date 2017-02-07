@@ -1,5 +1,6 @@
 <?php
-class Type {
+class Type 
+{
 	protected $__variable;
 	protected $__type;
 
