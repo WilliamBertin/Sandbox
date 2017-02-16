@@ -56,7 +56,7 @@ class FizzBuzz
     public function browseCollection($array, $counter)
     {
         try {
-            for ($i = 1; $i <= $counter; $i++) {
+            for ($i = 1; $i <= $counter; ++$i) {
                 $chaine = '';
                 foreach ($array as $key => $value) {
                     if (($i % $key) === 0) {
@@ -69,6 +69,28 @@ class FizzBuzz
             echo 'Exception reçue : ', $e->getMessage(), "\n";
         }
     }
+
+    public function primeNumber($counter)
+    {
+    	try {
+    		$cpt = 0;
+    		$counterPrime = 0;
+    		for ($i= 1; $i <= $counter; ++$i) {
+    			for ($j= 1; $j <=$i; ++$j) {
+    				if ($i % $j === 0 || $i === 1) {
+    					++$cpt;
+    				}
+    			}
+    			echo $cpt === 2 ? $i.' est un nombre premier. <br />' : '';
+    			$cpt === 2 ? ++$counterPrime : '';
+    			$cpt = 0;
+    		}
+    	echo 'Il y\' a '.$counterPrime.' nombres premiers entre 1 et '.$counter;
+    	} catch (Exception $e) {
+    		echo 'Exception reçue : ', $e->getMessage(), "\n";
+    	}
+    }
+
 }
 
 $array = array(
@@ -77,6 +99,10 @@ $array = array(
 );
 
 $fizzBuzz = new FizzBuzz();
+//TEST function browseCollection
 $fizzBuzz->setArray($array);
 $fizzBuzz->setCounter(100);
-$fizzBuzz->browseCollection($fizzBuzz->getArray(), $fizzBuzz->getCounter());
+//$fizzBuzz->browseCollection($fizzBuzz->getArray(), $fizzBuzz->getCounter());
+//TEST function primeNumber
+$fizzBuzz->setCounter(2500);
+$fizzBuzz->primeNumber($fizzBuzz->getCounter());
