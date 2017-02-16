@@ -66,20 +66,17 @@ class Cryptography
      * @param [boolean] $decrypt [boolean, default value is false, true to decrypt, false to crypt]
      */
 	public function CaesarCryptography($message, $notch, $decrypt = false) {
-		try {
-			$end = strlen($message);
-			for($i = 0; $i <= $end; ++$i) 
-			{
-				$char = substr( $message, $i, 1 );
-					for ($j = 0; $j < $notch; ++$j){
-						$decrypt === true ? $chat = --$char : $char = ++$char;
-					}
-				$message[$i] = $char;
-			}
-	    print_r($message);
-		} catch (Exception $e) {
-			echo 'Exception reçue : ',  $e->getMessage(), "\n";
-	    }
+		$end = strlen($message);
+		for($i = 0; $i <= $end; ++$i) 
+		{
+			$char = substr( $message, $i, 1 );
+				for ($j = 0; $j < $notch; ++$j){
+					$decrypt === true ? $chat = --$char : $char = ++$char;
+				}
+			$message[$i] = $char;
+		}
+    echo($message);
+	} 
 	}
 }
 

@@ -55,40 +55,33 @@ class FizzBuzz
      */
     public function browseCollection($array, $counter)
     {
-        try {
-            for ($i = 1; $i <= $counter; ++$i) {
-                $chaine = '';
-                foreach ($array as $key => $value) {
-                    if (($i % $key) === 0) {
-                        $chaine .= $value . ' ';
-                    }
+        for ($i = 1; $i <= $counter; ++$i) {
+            $chaine = '';
+            foreach ($array as $key => $value) {
+                if (($i % $key) === 0) {
+                    $chaine .= $value . ' ';
                 }
-                echo $chaine === '' ? $i . "<br />" : $chaine . "<br />";
             }
-        } catch (Exception $e) {
-            echo 'Exception reçue : ', $e->getMessage(), "\n";
+            echo $chaine === '' ? $i . "<br />" : $chaine . "<br />";
         }
     }
 
     public function primeNumber($counter)
     {
-    	try {
-    		$cpt = 0;
-    		$counterPrime = 0;
-    		for ($i= 1; $i <= $counter; ++$i) {
-    			for ($j= 1; $j <=$i; ++$j) {
-    				if ($i % $j === 0 || $i === 1) {
-    					++$cpt;
-    				}
-    			}
-    			echo $cpt === 2 ? $i.' est un nombre premier. <br />' : '';
-    			$cpt === 2 ? ++$counterPrime : '';
-    			$cpt = 0;
-    		}
-    	echo 'Il y\' a '.$counterPrime.' nombres premiers entre 1 et '.$counter;
-    	} catch (Exception $e) {
-    		echo 'Exception reçue : ', $e->getMessage(), "\n";
-    	}
+		$cpt = 0;
+		$counterPrime = 0;
+		for ($i= 1; $i <= $counter; ++$i) {
+			for ($j= 1; $j <=$i; ++$j) {
+				if ($i % $j === 0 || $i === 1) {
+					++$cpt;
+				}
+			}
+			echo $cpt === 2 ? $i.' est un nombre premier. <br />' : '';
+			$cpt === 2 ? ++$counterPrime : '';
+			$cpt = 0;
+		}
+	echo 'Il y\' a '.$counterPrime.' nombres premiers entre 1 et '.$counter;
+	} 
     }
 
 }
