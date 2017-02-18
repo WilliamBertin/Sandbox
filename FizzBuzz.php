@@ -72,18 +72,16 @@ class FizzBuzz
 		$counterPrime = 0;
 		for ($i= 1; $i <= $counter; ++$i) {
 			for ($j= 1; $j <=$i; ++$j) {
-				if ($i % $j === 0 || $i === 1) {
+				if ($i % $j === 0) {
 					++$cpt;
-				}
 			}
-			echo $cpt === 2 ? $i.' est un nombre premier. <br />' : '';
-			$cpt === 2 ? ++$counterPrime : '';
+		}
+			echo $cpt === 2 || $i === 1 ? $i.' est un nombre premier. <br />' : '';
+			$cpt === 2 || $i === 1 ? ++$counterPrime : '';
 			$cpt = 0;
 		}
 	echo 'Il y\' a '.$counterPrime.' nombres premiers entre 1 et '.$counter;
-	} 
-    }
-
+	}
 }
 
 $array = array(
@@ -97,5 +95,5 @@ $fizzBuzz->setArray($array);
 $fizzBuzz->setCounter(100);
 //$fizzBuzz->browseCollection($fizzBuzz->getArray(), $fizzBuzz->getCounter());
 //TEST function primeNumber
-$fizzBuzz->setCounter(2500);
+$fizzBuzz->setCounter('2500');
 $fizzBuzz->primeNumber($fizzBuzz->getCounter());
