@@ -76,7 +76,6 @@ class Cryptography
 			$message[$i] = $char;
 		}
     echo($message);
-	} 
 	}
 }
 
