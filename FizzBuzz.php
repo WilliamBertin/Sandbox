@@ -66,6 +66,13 @@ class FizzBuzz
         }
     }
 
+    /**
+     * [primeNumber display prime number and count prime number for counter
+     *
+     * @param [int] $counter [counter for i itteration]
+     *
+     * @return [void]
+     */
     public function primeNumber($counter)
     {
         $cpt = 0;
