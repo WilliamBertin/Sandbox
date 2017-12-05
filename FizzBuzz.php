@@ -68,20 +68,20 @@ class FizzBuzz
 
     public function primeNumber($counter)
     {
-		$cpt = 0;
-		$counterPrime = 0;
-		for ($i= 1; $i <= $counter; ++$i) {
-			for ($j= 1; $j <=$i; ++$j) {
-				if ($i % $j === 0) {
-					++$cpt;
-			}
-		}
-			echo $cpt === 2 || $i === 1 ? $i.' est un nombre premier. <br />' : '';
-			$cpt === 2 || $i === 1 ? ++$counterPrime : '';
-			$cpt = 0;
-		}
-	echo 'Il y\' a '.$counterPrime.' nombres premiers entre 1 et '.$counter;
-	}
+        $cpt = 0;
+        $counterPrime = 0;
+        for ($i = 1; $i <= $counter; ++$i) {
+            for ($j = 1; $j <= $i; ++$j) {
+                if ($i % $j === 0) {
+                    ++$cpt;
+                }
+            }
+            echo $cpt === 2 || $i === 1 ? $i . ' est un nombre premier. <br />' : '';
+            $cpt === 2 || $i === 1 ? ++$counterPrime : '';
+            $cpt = 0;
+        }
+        echo 'Il y\' a ' . $counterPrime . ' nombres premiers entre 1 et ' . $counter;
+    }
 }
 
 $array = array(

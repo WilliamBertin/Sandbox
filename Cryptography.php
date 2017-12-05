@@ -1,50 +1,51 @@
 <?php
-class Cryptography 
-{
-	protected $__message;
-	protected $__notch;
-	protected $__decrypt;
 
-	/**
-	 * [setMessage]
-	 * @param [string] $_message 
-	 */
+class Cryptography
+{
+    protected $__message;
+    protected $__notch;
+    protected $__decrypt;
+
+    /**
+     * [setMessage]
+     * @param [string] $_message
+     */
     public function setMessage($_message)
     {
         $this->__message = $_message;
     }
 
-	/**
-	 * [setNotch]
-	 * @param [int] $_notch
-	 */
+    /**
+     * [setNotch]
+     * @param [int] $_notch
+     */
     public function setNotch($_notch)
     {
         $this->__notch = $_notch;
     }
 
-	/**
-	 * [setDecrypt]
-	 * @param [bool] $_decrypt
-	 */
+    /**
+     * [setDecrypt]
+     * @param [bool] $_decrypt
+     */
     public function setDecrypt($_decrypt)
     {
-    	$this->__decrypt = $_decrypt;
+        $this->__decrypt = $_decrypt;
     }
 
-	/**
-	 * [getMessage]
-	 * @return [string]
-	 */
+    /**
+     * [getMessage]
+     * @return [string]
+     */
     public function getMessage()
     {
         return $this->__message;
     }
 
-	/**
-	 * [getNotch]
-	 * @return [int]
-	 */
+    /**
+     * [getNotch]
+     * @return [int]
+     */
     public function getNotch()
     {
         return $this->__notch;
@@ -56,7 +57,7 @@ class Cryptography
      */
     public function getDecrypt()
     {
-    	return $this->__decrypt;
+        return $this->__decrypt;
     }
 
     /**
@@ -65,18 +66,18 @@ class Cryptography
      * @param [int]  $notch   [rank to crypt the message (Caesar method)]
      * @param [boolean] $decrypt [boolean, default value is false, true to decrypt, false to crypt]
      */
-	public function CaesarCryptography($message, $notch, $decrypt = false) {
-		$end = strlen($message);
-		for($i = 0; $i <= $end; ++$i) 
-		{
-			$char = substr( $message, $i, 1 );
-				for ($j = 0; $j < $notch; ++$j){
-					$decrypt === true ? $chat = --$char : $char = ++$char;
-				}
-			$message[$i] = $char;
-		}
-    echo($message);
-	}
+    public function CaesarCryptography($message, $notch, $decrypt = false)
+    {
+        $end = strlen($message);
+        for ($i = 0; $i <= $end; ++$i) {
+            $char = substr($message, $i, 1);
+            for ($j = 0; $j < $notch; ++$j) {
+                $decrypt === true ? $chat = --$char : $char = ++$char;
+            }
+            $message[$i] = $char;
+        }
+        echo($message);
+    }
 }
 
 $messageToCrypt = new Cryptography();

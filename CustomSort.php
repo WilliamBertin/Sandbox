@@ -10,8 +10,7 @@ class CustomSort
     {
         $customSort = array('XS', 'S', 'M', 'L', 'XL', 'XXL');
 
-        if (!(in_array($a, $customSort) && in_array($b, $customSort)))
-        {
+        if (!(in_array($a, $customSort) && in_array($b, $customSort))) {
             return 0;
         }
 
@@ -22,7 +21,7 @@ class CustomSort
 //Exemple with array sorted alphabeticaly
 $arrayToSort = array('L', 'M', 'S', 'XS', 'XL', 'XXL');
 
-uksort($arrayToSort,"customSort");
+uksort($arrayToSort, "customSort");
 
 //Display the list sorted with customSort
 print_r($arrayToSort);

@@ -7,7 +7,7 @@ $start = microtime(true);
 $end = microtime(true);
 
 $time = $end - $start;
-echo $time."\n";
+echo $time . "\n";
 
 /*-------------------------------------------------*/
 
@@ -18,6 +18,6 @@ $start = microtime(true);
 $end = microtime(true);
 
 $time = $end - $start;
-echo $time."\n";
+echo $time . "\n";
 
 /*-------------------------------------------------*/

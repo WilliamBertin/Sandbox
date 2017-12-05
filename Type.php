@@ -1,8 +1,9 @@
 <?php
-class Type 
+
+class Type
 {
-	protected $__variable;
-	protected $__type;
+    protected $__variable;
+    protected $__type;
 
     /**
      * [setVariable]
